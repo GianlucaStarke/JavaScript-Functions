@@ -7,7 +7,7 @@ async function fetchPost(url, type, formData){
 	})
 	if(!res.ok){
 		
-		throw new Error(`HTTP error! status: ${response.status}`)
+		throw new Error(`ERROR: ${response.status}`)
 	}
 	return await res.type()
 }
