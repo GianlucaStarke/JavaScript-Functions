@@ -1,7 +1,7 @@
-# JavaScript-Fetch-and-FormData
+# JavaScript-Fetch-for-PHP-POST-request
 functions for creating a FormData and accomplish a Fetch.
 
-Functions for creating a FormData and a Fetch in JavaScript.
+Functions for creating a FormData and a Fetch in JavaScript. It was created for PHP POST requests, but you can edit it as you need.
 
 Example of usage:
 
