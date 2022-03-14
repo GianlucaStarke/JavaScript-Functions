@@ -1,4 +1,4 @@
-function criarFormData(formData, ...args){
+function createFormData(formData, ...args){
 
 	args.map(arg => {
 
