@@ -36,7 +36,7 @@ async function fetchAjax({
 								)
 						)
 				)
-		return decrypted_res || res.json() || res.blob() || res.text() || function(){throw new Error('Data type not found')}
+		return decrypted_res || res.json() || res.blob() || res.text() || function(){throw new Error('Failed to detect data type')}
 
 	}
 	catch(rej){
