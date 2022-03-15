@@ -9,7 +9,7 @@
  * @param {object} data - datas for fetch's body(optional)
  * @param {string} dataType - response's data type: auto(default), json, blob or text
  */
-async function fetchAjax({
+async function fetchRequest({
 	path: path,
 	method: method,
 	formData: formData,
