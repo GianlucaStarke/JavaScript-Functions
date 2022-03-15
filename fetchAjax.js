@@ -11,16 +11,10 @@ async function fetchAjax({
 		const res = await fetch(url, {
 
 			method: method,
-			body: createFormData(
-				form ? new FormData(form) : new FormData(),
-				() => {
-				
-					return Object.entries(data).map(([key, value]) => {
-					
-						return {key: value}
-					})
-				}
-			)
+			body: createFormData({
+				form: form,
+				data: data
+			})
 		})
 		if(!res.ok){
 
