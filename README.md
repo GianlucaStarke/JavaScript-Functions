@@ -10,7 +10,7 @@ Some function I use in my codes and I'd like to share. Not all of them are compl
 
 <br><br>
 
-<h3>In working functions:</h3>
+<h3>WIP functions:</h3>
 <ul>
   <li>fetchAjax()</li>
 </ul>
