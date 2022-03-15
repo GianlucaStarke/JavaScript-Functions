@@ -32,7 +32,7 @@ async function fetchAjax({
 		}
 		const decrypted_res =
 			!dataType || dataType == 'auto'
-				? false
+				? res.json() || res.blob() || res.text() || 'detect fail'
 				:(
 					dataType == 'json'
 						? await res.json()
@@ -42,15 +42,26 @@ async function fetchAjax({
 								: (
 									dataType == 'text'
 										? await res.text()
-										: throw new Error(`Data type ${dataType} couldn't be decrypted`)
+										: 'decrypt fail'
 								)
 						)
 				)
-		return decrypted_res || res.json() || res.blob() || res.text() || function(){throw new Error('Failed to detect data type')}
-
+		if(decrypted_res == 'detect fail'){
+		
+			throw new Error('Failed to detect data type')
+		}
+		else if(decrypted_res == 'decrypt fail'){
+		
+			throw new Error(`Data type ${dataType} couldn't be decrypted`)
+		}
+		else{
+			
+			return decrypted_res
+		}
 	}
 	catch(rej){
 
+		console.error(rej)
 		return rej
 	}
 }
