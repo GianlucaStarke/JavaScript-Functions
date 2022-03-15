@@ -12,5 +12,5 @@ Some functions may require other functions. It will be displayed at the top of t
 
 <h3>WIP functions:</h3>
 <ul>
-  <li>fetchAjax()</li>
+  <li>fetchRequest()</li>
 </ul>
