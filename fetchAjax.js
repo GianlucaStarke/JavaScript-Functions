@@ -36,7 +36,6 @@ async function fetchAjax({
 	}
 	catch(rej){
 
-		alert(rej)
-		console.error(rej)
+		return rej
 	}
 }
