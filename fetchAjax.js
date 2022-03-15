@@ -28,7 +28,7 @@ async function fetchAjax({
 					: (
 						dataType == 'text'
 							? await res.text()
-							: res.json() || res.blob() || res.text()
+							: res.json() || res.blob() || res.text() || function(){throw new Error('Data type not found')}
 					)
 			)
 		return decripted_res || res
