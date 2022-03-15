@@ -3,14 +3,14 @@
 Some function I use in my codes and I'd like to share. Not all of them are completed or working properly.
 
 <hr>
-<h3>Working functions:</h3>
+<h3>Ready to use functions:</h3>
 <ul>
   <li>createFormData()</li>
 </ul>
 
 <br><br>
 
-<h3>On test functions:</h3>
+<h3>In working functions:</h3>
 <ul>
   <li>fetchAjax()</li>
 </ul>
