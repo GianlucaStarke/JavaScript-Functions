@@ -15,7 +15,7 @@ async function fetchAjax({
 				form ? new FormData(form) : new FormData(),
 				() => {
 				
-					return Object.entries(data).map([key, value] => {
+					return Object.entries(data).map(([key, value]) => {
 					
 						return {key: value}
 					})
