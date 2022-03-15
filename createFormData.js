@@ -1,26 +1,8 @@
-// 1
-function createFormData(formData, ...args){
-
-	args.map(arg => {
-
-		const keys = Object.keys(arg)
-		const value = arg[keys[0]]
-		formData.append(keys[0], value)
-	})
-	return formData
-}
-
-// 2
-function createFormData(formData, data = {}){
-
-	Object.entries(data).map(([key, value]) => {
-
-		formData.append(key, value)
-	})
-	return formData
-}
-
-// 3
+/**
+ * Returns a FormData within the data passed by parameters. If no parameter is given it will return an empty FormData.
+ * @param {HTMLElement} form - form element with data(optional)
+ * @param {object} data - object with data(optional)
+ */
 function createFormData({
 	form: form,
 	data: data
