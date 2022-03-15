@@ -20,19 +20,23 @@ async function fetchAjax({
 
 			throw new Error(`HTTP ERROR: ${res.status}`)
 		}
-		const decripted_res =
-			dataType == 'json'
-				? await res.json()
-				: (
-					dataType == 'blob'
-						? await res.blob()
+		const decrypted_res =
+			!dataType
+				? false
+				:(
+					dataType == 'json'
+						? await res.json()
 						: (
-							dataType == 'text'
-								? await res.text()
-								: res.json() || res.blob() || res.text() || function(){throw new Error('Data type not found')}
+							dataType == 'blob'
+								? await res.blob()
+								: (
+									dataType == 'text'
+										? await res.text()
+										: throw new Error(`Data type ${dataType} couldn't be decrypted`)
+								)
 						)
 				)
-		return decripted_res || res
+		return decrypted_res || res.json() || res.blob() || res.text() || function(){throw new Error('Data type not found')}
 
 	}
 	catch(rej){
