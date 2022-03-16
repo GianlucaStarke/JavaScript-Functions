@@ -29,21 +29,21 @@ async function fetchRequest({
 	if(!res.ok)
 		throw new Error(`HTTP ERROR: ${res.status}`)
 	const decrypted_res =
-		!dataType || dataType == 'auto'
+		!dataType || dataType === 'auto'
 			? res.json() || res.blob() || res.text() || function(){throw new Error('Failed to detect data type')}
 			:(
-				dataType == 'json'
+				dataType === 'json'
 					? await res.json()
 					: (
-						dataType == 'blob'
+						dataType === 'blob'
 							? await res.blob()
 							: (
-								dataType == 'text'
+								dataType === 'text'
 									? await res.text()
 									: function(){throw new Error(`Data type ${dataType} couldn't be decrypted`)}
 							)
 					)
 			)
-	typeof decrypted_res == 'function' && decrypted_res()
+	typeof decrypted_res === 'function' && decrypted_res()
 	return decrypted_res
 }
