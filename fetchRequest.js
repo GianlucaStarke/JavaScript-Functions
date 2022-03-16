@@ -19,14 +19,13 @@ async function fetchRequest({
 }){
 	
 	// Get fetch response
-	const res =
-		await fetch(path, {
-			method: method || 'GET',
-			body: formData || createFormData({
-				form: form,
-				data: data
-			})
+	const res = await fetch(path, {
+		method: method || 'GET',
+		body: formData || createFormData({
+			form: form,
+			data: data
 		})
+	})
 	
 	// Verify for HTTP error
 	if(!res.ok)		
