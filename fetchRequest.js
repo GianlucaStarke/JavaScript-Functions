@@ -17,21 +17,16 @@ async function fetchRequest({
 	data: data,
 	dataType: dataType
 }){
-
 	try{
-
-		const res = await fetch(path, {
-
-			method: method || 'GET',
-			body: formData || createFormData({
-				form: form,
-				data: data
+		const res =
+			await fetch(path, {
+				method: method || 'GET',
+				body: formData || createFormData({
+					form: form,
+					data: data
+				})
 			})
-		})
-		if(!res.ok){
-
-			throw new Error(`HTTP ERROR: ${res.status}`)
-		}
+		if(!res.ok) throw new Error(`HTTP ERROR: ${res.status}`)
 		const decrypted_res =
 			!dataType || dataType == 'auto'
 				? res.json() || res.blob() || res.text() || function(){throw new Error('Failed to detect data type')}
@@ -52,7 +47,6 @@ async function fetchRequest({
 		return decrypted_res
 	}
 	catch(rej){
-
 		return Promise.reject(rej)
 	}
 }
