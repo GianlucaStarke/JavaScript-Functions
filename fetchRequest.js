@@ -30,7 +30,7 @@ async function fetchRequest({
 		throw new Error(`HTTP ERROR: ${res.status}`)
 	const decrypted_res =
 		!dataType || dataType === 'auto'
-			? res.json() || res.blob() || res.text() || function(){throw new Error('Failed to detect data type')}
+			? await res.json() || await res.blob() || await res.text() || function(){throw new Error('Failed to detect data type')}
 			:(
 				dataType === 'json'
 					? await res.json()
