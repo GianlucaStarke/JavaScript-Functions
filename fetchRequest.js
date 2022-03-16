@@ -20,6 +20,7 @@ async function fetchRequest({
 	
 	// Get fetch response
 	const res = await fetch(path, {
+		
 		method: method || 'GET',
 		body: formData || createFormData({
 			form: form,
