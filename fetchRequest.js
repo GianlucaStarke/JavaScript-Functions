@@ -17,7 +17,9 @@ async function fetchRequest({
 	data: data,
 	dataType: dataType
 }){
+	
 	try{
+		
 		const res =
 			await fetch(path, {
 				method: method || 'GET',
@@ -48,6 +50,7 @@ async function fetchRequest({
 		return decrypted_res
 	}
 	catch(rej){
+		
 		return Promise.reject(rej)
 	}
 }
