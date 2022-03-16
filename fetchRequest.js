@@ -26,7 +26,8 @@ async function fetchRequest({
 					data: data
 				})
 			})
-		if(!res.ok) throw new Error(`HTTP ERROR: ${res.status}`)
+		if(!res.ok)
+			throw new Error(`HTTP ERROR: ${res.status}`)
 		const decrypted_res =
 			!dataType || dataType == 'auto'
 				? res.json() || res.blob() || res.text() || function(){throw new Error('Failed to detect data type')}
