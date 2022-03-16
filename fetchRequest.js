@@ -53,6 +53,6 @@ async function fetchRequest({
 	}
 	catch(rej){
 
-		return rej
+		return Promise.reject(rej)
 	}
 }
