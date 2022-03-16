@@ -53,7 +53,9 @@ async function fetchRequest({
 	}
 	catch(rej){
 
-		console.error(rej)
-		return rej
+		return {
+			ok: false,
+			error: rej
+		}
 	}
 }
