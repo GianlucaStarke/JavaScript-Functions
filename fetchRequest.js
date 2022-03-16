@@ -26,7 +26,7 @@ async function fetchRequest({
 				data: data
 			})
 		})
-	if(!res.ok)
+	if(!res.ok)		
 		throw new Error(`HTTP ERROR: ${res.status}`)
 	const decrypted_res =
 		!dataType || dataType === 'auto'
