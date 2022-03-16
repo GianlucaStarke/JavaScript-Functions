@@ -49,13 +49,12 @@ async function fetchRequest({
 						)
 				)
 		typeof decrypted_res == 'function' && decrypted_res()
-		return decrypted_res
+		return {
+			
+		}
 	}
 	catch(rej){
 
-		return {
-			ok: false,
-			error: rej
-		}
+		return rej
 	}
 }
