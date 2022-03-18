@@ -3,10 +3,15 @@
  * @param {HTMLElement} form - form element with data(optional)
  * @param {object} data - object with data(optional)
  */
-function createFormData({
+async function createFormData({
 	form: form,
 	data: data
 }){
+	if(typeof form !== 'object')
+		throw new Error(`Invalid data type for form`)
+	
+	if(typeof data !== 'object')
+		throw new Error(`Invalid data type for data`)
 	
 	// Create FormData
 	const formData = new FormData(form) || new FormData()
