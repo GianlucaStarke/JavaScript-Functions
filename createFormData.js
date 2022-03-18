@@ -12,7 +12,7 @@ function createFormData({
 	const formData = new FormData(form) || new FormData()
 	
 	// Append each data to FormData
-	Object.entries(data).map(([key, value]) => formData.append(key, value))
+	data && Object.entries(data).map(([key, value]) => formData.append(key, value))
 	
 	// Return FormData
 	return formData
