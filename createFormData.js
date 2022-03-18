@@ -9,7 +9,7 @@ function createFormData({
 }){
 	
 	// Create FormData
-	const formData = new FormData(form) || new FormData
+	const formData = new FormData(form) || new FormData()
 	
 	// Append each data to FormData
 	Object.entries(data).map(([key, value]) => formData.append(key, value))
