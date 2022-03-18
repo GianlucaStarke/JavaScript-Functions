@@ -3,7 +3,7 @@
  * @param {HTMLElement} form - form element with data(optional)
  * @param {object} data - object with data(optional)
  */
-async function createFormData({
+function createFormData({
 	form: form,
 	data: data
 }){
