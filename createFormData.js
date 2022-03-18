@@ -8,10 +8,10 @@ async function createFormData({
 	data: data
 }){
 	
-	if(typeof form !== 'object')
+	if(form && typeof form !== 'object')
 		throw new Error(`Invalid data type for form`)
 	
-	if(typeof data !== 'object')
+	if(data && typeof data !== 'object')
 		throw new Error(`Invalid data type for data`)
 	
 	// Create FormData
