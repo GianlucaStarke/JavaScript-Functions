@@ -8,14 +8,27 @@ function createFormData({
 	data: data
 }){
 	
+	if(form && typeof form !== 'object'){
+		
+		throw new Error(`Invalid data type for form`);
+	}
+	
+	if(data && typeof data !== 'object'){
+		
+		throw new Error(`Invalid data type for data`);
+	}
+	
 	// Create FormData
-	const formData = new FormData(form) || new FormData
+	const formData = new FormData(form) || new FormData();
 	
 	// Append each data to FormData
-	Object.entries(data).map(([key, value]) => formData.append(key, value))
+	data && Object.entries(data).map(([key, value]) =>
+					 
+		formData.append(key, value)
+	);
 	
 	// Return FormData
-	return formData
+	return formData;
 }
 
 
@@ -45,14 +58,16 @@ async function fetchRequest({
 			form: form,
 			data: data
 		})
-	})
+	});
 	
 	// Verify for HTTP error
-	if(!res.ok)		
-		throw new Error(`HTTP ERROR: ${res.status}`)
+	if(!res.ok){
+		
+		throw new Error(`HTTP ERROR: ${res.status}`);
+	}
 	
 	// Get content from fetch response
-	const decrypted_res =
+	const decrypted_res = (
 		!dataType || dataType === 'auto'
 			? await res.json() || await res.blob() || await res.text() || function(){throw new Error('Failed to detect data type')}
 			: (
@@ -68,10 +83,11 @@ async function fetchRequest({
 							)
 					)
 			)
+	);
 	
 	// Verify for error on decryption
-	typeof decrypted_res === 'function' && decrypted_res()
+	typeof decrypted_res === 'function' && decrypted_res();
 	
 	//return decrypted response
-	return decrypted_res
+	return decrypted_res;
 }
