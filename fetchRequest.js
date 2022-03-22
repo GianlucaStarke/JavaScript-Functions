@@ -26,14 +26,16 @@ async function fetchRequest({
 			form: form,
 			data: data
 		})
-	})
+	});
 	
 	// Verify for HTTP error
-	if(!res.ok)		
-		throw new Error(`HTTP ERROR: ${res.status}`)
+	if(!res.ok){
+		
+		throw new Error(`HTTP ERROR: ${res.status}`);
+	}
 	
 	// Get content from fetch response
-	const decrypted_res =
+	const decrypted_res = (
 		!dataType || dataType === 'auto'
 			? await res.json() || await res.blob() || await res.text() || function(){throw new Error('Failed to detect data type')}
 			: (
@@ -49,10 +51,11 @@ async function fetchRequest({
 							)
 					)
 			)
+	);
 	
 	// Verify for error on decryption
-	typeof decrypted_res === 'function' && decrypted_res()
+	typeof decrypted_res === 'function' && decrypted_res();
 	
 	//return decrypted response
-	return decrypted_res
+	return decrypted_res;
 }
