@@ -17,10 +17,8 @@ async function fetchRequest({
 	data: data,
 	dataType: dataType
 }){
-	
 	// Get fetch response
 	const res = await fetch(path, {
-		
 		method: method || 'GET',
 		body: formData || createFormData({
 			form: form,
@@ -30,7 +28,6 @@ async function fetchRequest({
 	
 	// Verify for HTTP error
 	if(!res.ok){
-		
 		throw new Error(`HTTP ERROR: ${res.status}`);
 	}
 	
