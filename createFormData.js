@@ -7,14 +7,11 @@ function createFormData({
 	form: form,
 	data: data
 }){
-	
 	if(form && typeof form !== 'object'){
-		
 		throw new Error(`Invalid data type for form`);
 	}
 	
 	if(data && typeof data !== 'object'){
-		
 		throw new Error(`Invalid data type for data`);
 	}
 	
@@ -22,9 +19,8 @@ function createFormData({
 	const formData = new FormData(form) || new FormData();
 	
 	// Append each data to FormData
-	data && Object.entries(data).map(([key, value]) =>
-					 
-		formData.append(key, value)
+	data && Object.entries(data).map(
+		([key, value]) => formData.append(key, value)
 	);
 	
 	// Return FormData
