@@ -1,4 +1,4 @@
-function dragElement(elmnt) {
+function dragElement(element) {
     const position = {
         HorizontalMoviment: 0,
         VerticalMoviment: 0,
@@ -6,16 +6,16 @@ function dragElement(elmnt) {
         clientY: 0
     }
 
-    const moving_element = document.getElementById(elmnt.id + "header") || elmnt;
+    const moving_element = document.getElementById(element.id + "header") || element;
     moving_element.onmousedown = (event) => {
-        e = event || window.event()
+        const e = event || window.event()
         e.preventDefault()
 
         position.clientX = e.clientX
         position.clientY = e.clientY
 
         document.onmousemove = (event) => {
-            e = event || window.event()
+            const e = event || window.event()
             e.preventDefault()
 
             position.HorizontalMoviment = position.clientX - e.clientX
@@ -23,8 +23,8 @@ function dragElement(elmnt) {
             position.clientX = e.clientX
             position.clientY = e.clientY
 
-            elmnt.style.top = (elmnt.offsetTop - position.VerticalMoviment) + 'px'
-            elmnt.style.left = (elmnt.offsetLeft - position.HorizontalMoviment) + 'px'
+            element.style.top = (element.offsetTop - position.VerticalMoviment) + 'px'
+            element.style.left = (element.offsetLeft - position.HorizontalMoviment) + 'px'
         }
 
         document.onmouseup = () => {
