@@ -1,10 +1,10 @@
 function dragElement(element) {
     const position = {
-        x: 0,
-        y: 0
+        y: 0,
+        x: 0
     }
-
     const moving_element = document.getElementById(element.id + "header") || element;
+    
     moving_element.onmousedown = (event) => {
         const e = event || window.event()
         e.preventDefault()
