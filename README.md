@@ -17,3 +17,5 @@ Some functions may require other functions. It will be displayed at the top of t
 
 
 https://stackoverflow.com/questions/4292373/javascript-print-without-print-dialog-box
+
+https://www.techwalla.com/articles/how-to-use-javascript-to-print-a-pdf
