@@ -14,3 +14,6 @@ Some functions may require other functions. It will be displayed at the top of t
 <ul>
   <li>fetchRequest()</li>
 </ul>
+
+
+https://stackoverflow.com/questions/4292373/javascript-print-without-print-dialog-box
