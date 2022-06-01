@@ -1,4 +1,4 @@
-function criarElemento(tag, props = {}){
+function createHTMlElement(tag, props = {}){
     const element = document.createElement(tag);
 
     Object.entries(props).map(([prop, value]) => element[prop] = value);
