@@ -20,7 +20,7 @@ const myButton = () => createHTMLElement('button', {
 	innerText: 'My Button',
 	classes: [
 		'red-button'
-	],
+	]
 });
 
 const myDiv = () => createHTMLElement('div', {
