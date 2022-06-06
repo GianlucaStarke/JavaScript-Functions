@@ -11,3 +11,28 @@ function createHTMLElement(tag, props = {}){
 
     return element;
 }
+
+// Example:
+
+const myButton = () => createHTMLElement('button', {
+	id: 'button',
+	type: 'button',
+	innerText: 'My Button',
+	classes: [
+		'red-button'
+	],
+});
+
+const myDiv = () => createHTMLElement('div', {
+	classes: [
+		'margin-small',
+		'width-1-2'
+	],
+	children: [
+		myButton()
+	]
+});
+
+some_HTML_element.append(
+	myDiv()
+);
