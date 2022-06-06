@@ -20,7 +20,10 @@ const myButton = () => createHTMLElement('button', {
 	innerText: 'My Button',
 	classes: [
 		'red-button'
-	]
+	],
+	onclick: function(e){
+		// do something...
+	}
 });
 
 const myDiv = () => createHTMLElement('div', {
