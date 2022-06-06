@@ -21,7 +21,7 @@ const myButton = () => createHTMLElement('button', {
 	classes: [
 		'red-button'
 	],
-	onclick: function(e){
+	onclick: e => {
 		// do something...
 	}
 });
