@@ -6,8 +6,11 @@ function createHTMLElement(tag, props = {}){
 	Array.isArray(props.classes)
 		&& props.classes.map(classe => element.classList.add(classe));
 
-	Array.isArray(props.children)
-		&& props.children.map(child => element.append(child));
+	Array.isArray(props.appendChildren)
+		&& props.appendChildren.map(child => element.append(child));
+	
+	Array.isArray(props.prependChildren)
+		&& props.prependChildren.map(child => element.prepend(child));
 
     return element;
 }
@@ -31,7 +34,7 @@ const myDiv = () => createHTMLElement('div', {
 		'margin-small',
 		'width-1-2'
 	],
-	children: [
+	appendChildren: [
 		myButton()
 	]
 });
