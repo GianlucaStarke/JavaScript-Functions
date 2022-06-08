@@ -18,7 +18,12 @@ function createHTMLElement(tag, props = {}){
     return element;
 }
 
-// Example:
+/*
+ * Example:
+ * 
+ * I declared the elements with arrow funcions (const icon = () => createHTMLElement)
+ * but normal declaration works too (const icon = createHTMLElement)
+ */
 
 const icon = () => createHTMLElement('i', {
 	classes: [
