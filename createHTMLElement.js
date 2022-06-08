@@ -1,3 +1,6 @@
+/*
+ * An easier way to create HTML elements with JS vanilla
+ */
 function createHTMLElement(tag, props = {}){
     const element = document.createElement(tag);
 
