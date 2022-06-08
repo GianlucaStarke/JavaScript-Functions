@@ -8,6 +8,7 @@ Some functions may require other functions. It will be displayed at the top of t
 <h3>Ready to use functions:</h3>
 <ul>
   <li>createFormData()</li>
+  <li>createHTMLElement()</li>
 </ul>
 
 <h3>WIP functions:</h3>
