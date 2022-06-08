@@ -20,7 +20,7 @@ function createHTMLElement(tag, props = {}){
 
 // Example:
 
-const icon = createHTMLElement('i', {
+const icon = () => createHTMLElement('i', {
 	classes: [
 		'icon-class'
 	]
