@@ -41,7 +41,7 @@ const myButton = () => createHTMLElement('button', {
 	prependChildren: [
 		icon()
 	],
-	onclick: e => {
+	onclick: async e => {
 		// do something...
 	}
 });
