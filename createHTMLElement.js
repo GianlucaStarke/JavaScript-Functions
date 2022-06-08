@@ -17,6 +17,12 @@ function createHTMLElement(tag, props = {}){
 
 // Example:
 
+const icon = createHTMLElement('i', {
+	classes: [
+		'icon-class'
+	]
+});
+
 const myButton = () => createHTMLElement('button', {
 	id: 'button',
 	type: 'button',
@@ -25,7 +31,7 @@ const myButton = () => createHTMLElement('button', {
 		'red-button'
 	],
 	prependChildren: [
-		'icon'
+		icon()
 	],
 	onclick: e => {
 		// do something...
