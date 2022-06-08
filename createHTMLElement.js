@@ -24,6 +24,9 @@ const myButton = () => createHTMLElement('button', {
 	classes: [
 		'red-button'
 	],
+	prependChildren: [
+		'icon'
+	],
 	onclick: e => {
 		// do something...
 	}
