@@ -1,29 +1,29 @@
 /*
- * An easier way to create HTML elements with JS vanilla
- */
+* An easier way to create HTML elements with JS vanilla
+*/
 function createHTMLElement(tag, props = {}){
-    const element = document.createElement(tag);
+	const element = document.createElement(tag);
 
-    Object.entries(props).map(([prop, value]) => element[prop] = value);
-	
+	Object.entries(props).map(([prop, value]) => element[prop] = value);
+
 	Array.isArray(props.classes)
-		&& props.classes.map(classe => element.classList.add(classe));
+	&& props.classes.map(classe => element.classList.add(classe));
 
 	Array.isArray(props.appendChildren)
-		&& props.appendChildren.map(child => element.append(child));
-	
-	Array.isArray(props.prependChildren)
-		&& props.prependChildren.map(child => element.prepend(child));
+	&& props.appendChildren.map(child => element.append(child));
 
-    return element;
+	Array.isArray(props.prependChildren)
+	&& props.prependChildren.map(child => element.prepend(child));
+
+	return element;
 }
 
 /*
- * Example:
- * 
- * I declared the elements with arrow funcions (const icon = () => createHTMLElement)
- * but normal declaration works too (const icon = createHTMLElement)
- */
+* Example:
+* 
+* I declared the elements with arrow funcions (const icon = () => createHTMLElement)
+* but normal declaration works too (const icon = createHTMLElement)
+*/
 
 const icon = () => createHTMLElement('i', {
 	classes: [
