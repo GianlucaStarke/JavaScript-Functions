@@ -55,7 +55,3 @@ const myDiv = () => createHTMLElement('div', {
 		myButton()
 	]
 });
-
-some_HTML_element.append(
-	myDiv()
-);
