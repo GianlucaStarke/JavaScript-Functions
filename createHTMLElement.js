@@ -3,6 +3,7 @@
 */
 function createHTMLElement(tag, props = {}){
 	const element = document.createElement(tag);
+	// teste
 
 	Object.entries(props).map(([prop, value]) => element[prop] = value);
 
