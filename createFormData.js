@@ -12,7 +12,7 @@ function createFormData({
 	if(data && typeof data !== 'object') throw new Error(`Invalid data type for data`)
 	
 	// Create FormData
-	const formData = new FormData(form) || new FormData()
+	const formData = form ? new FormData(form) : new FormData()
 	
 	// Append each data to FormData
 	if(data) Object.entries(data).map(
