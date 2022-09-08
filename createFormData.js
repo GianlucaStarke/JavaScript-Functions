@@ -3,10 +3,7 @@
  * @param {HTMLElement} form - form element with data(optional)
  * @param {object} data - object with data(optional)
  */
-function createFormData({
-	form: form,
-	data: data
-}){
+function createFormData({form = null, data = null}){
 	if(form && typeof form !== 'object') throw new Error(`Invalid data type for form`)
 	
 	if(data && typeof data !== 'object') throw new Error(`Invalid data type for data`)
